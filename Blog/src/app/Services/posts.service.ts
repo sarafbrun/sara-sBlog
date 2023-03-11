@@ -36,4 +36,8 @@ export class PostsService {
       }
     ]
   }
+
+  create(post: Post) {
+    this.arrPost.push(post);
+  }
 }

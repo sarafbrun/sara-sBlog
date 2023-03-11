@@ -1,1 +1,41 @@
-<p>formulario works!</p>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label class="label-form">Titulo</label>
+        <input class="form-control" name="titulo" placeholder="Escribe el título del post" formControlName="titulo">
+    </div>
+    <div class="mb-3">
+        <label class="label-form">Texto</label>
+        <input type="text" name="texto" class="form-control" placeholder="Escribe el texto" formControlName="texto">
+    </div>
+    <div class="mb-3">
+        <label class="label-form">Autor</label>
+        <input type="text" name="autor" class="form-control" formControlName="autor"
+            placeholder="Escribe el nombre del autor">
+    </div>
+    <div class="mb-3">
+        <div>
+            <label class="label-form">Sube una imagen</label>
+        </div>
+        <input type="file" name="imagen" class="form-control-file" formControlName="imagen">
+    </div>
+    <div class="mb-3">
+        <label class="label-form">Fecha</label>
+        <input type="text" name="fecha" class="form-control" formControlName="fecha">
+    </div>
+    <div class="mb-3">
+        <label class="label-form">Categoría</label>
+        <select class="form-control" name="categoria" formControlName="categoria">
+            <option value="general">General</option>
+            <option value="viajes">Viajes</option>
+            <option value="gastronomia">Gastronomía</option>
+            <option value="social">Social</option>
+            <option value="actualidad">Actualidad</option>
+            <option value="curiosidades">Curiosidades</option>
+        </select>
+    </div>
+    <input type="submit" value="Enviar" class="btn btn-primary">
+</form>
+
+
+
+<!-- [disabled]="!formulario.valid" -->
