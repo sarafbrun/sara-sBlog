@@ -40,6 +40,9 @@ export class PostsService {
   //Para que se impriman todos los posts
 
   getAll() {
+    if (localStorage.getItem('arrPosts')) {
+      this.arrPost = JSON.parse(localStorage.getItem('arrPosts')!);
+    }
     return this.arrPost;
   }
 
@@ -54,6 +57,7 @@ export class PostsService {
 
   create(post: Post) {
     this.arrPost.push(post);
+    localStorage.setItem('arrPosts', JSON.stringify(this.arrPost));
   }
 
 

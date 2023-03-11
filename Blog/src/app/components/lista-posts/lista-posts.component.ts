@@ -13,6 +13,9 @@ export class ListaPostsComponent {
 
   constructor(private postsService: PostsService) {
     this.posts = [];
+    if (localStorage.getItem('arrPosts')) {
+      this.posts = JSON.parse(localStorage.getItem('arrPosts')!);
+    }
   }
 
   ngOnInit() {
