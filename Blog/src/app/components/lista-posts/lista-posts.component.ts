@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Post } from 'src/app/interfaces/post.interface';
+import { PostsService } from 'src/app/Services/posts.service';
 
 @Component({
   selector: 'app-lista-posts',
@@ -6,5 +8,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./lista-posts.component.css']
 })
 export class ListaPostsComponent {
+
+  posts: Post[];
+
+  constructor(private postsService: PostsService) {
+    this.posts = [];
+  }
+
+  ngOnInit() {
+    this.posts = this.postsService.getAll()
+  }
+
+  onChange($event: any) {
+    if ($event.target.value === '') {
+      this.posts = this.postsService.getAll()
+    } else {
+      this.posts = this.postsService.getCategoria($event.target.value);
+    }
+  }
 
 }

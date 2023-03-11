@@ -4,8 +4,8 @@ import { FormularioComponent } from './components/formulario/formulario.componen
 import { ListaPostsComponent } from './components/lista-posts/lista-posts.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/posts' },
-  { path: 'posts', component: ListaPostsComponent },
+  { path: '', pathMatch: 'full', redirectTo: 'blog/posts' },
+  { path: 'blog/posts', component: ListaPostsComponent },
   { path: 'blog/new', component: FormularioComponent },
   { path: '**', component: ListaPostsComponent }
 ];

@@ -16,14 +16,15 @@
         <div>
             <label class="label-form">Sube una imagen</label>
         </div>
-        <input type="file" name="imagen" class="form-control-file" formControlName="imagen">
+        <input type="text" name="imagen" class="form-control" formControlName="imagen"
+            placeholder="Pega la url de la imagen">
     </div>
     <div class="mb-3">
         <label class="label-form">Fecha</label>
         <input type="text" name="fecha" class="form-control" formControlName="fecha">
     </div>
     <div class="mb-3">
-        <label class="label-form">Categoría</label>
+        <label class="label-form">Selecciona una categoria</label>
         <select class="form-control" name="categoria" formControlName="categoria">
             <option value="general">General</option>
             <option value="viajes">Viajes</option>
@@ -33,9 +34,5 @@
             <option value="curiosidades">Curiosidades</option>
         </select>
     </div>
-    <input type="submit" value="Enviar" class="btn btn-primary">
+    <input type="submit" value="Enviar" class="btn btn-primary" [disabled]="!formulario.valid">
 </form>
-
-
-
-<!-- [disabled]="!formulario.valid" -->

@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
 import { PostsService } from 'src/app/Services/posts.service';
-import { Post } from 'src/app/interfaces/post.interface';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,10 +10,8 @@ import { Router } from '@angular/router';
 
 })
 export class FormularioComponent {
-  [x: string]: any;
 
   formulario: FormGroup;
-  nuevoPost: Post;
 
   constructor(
     private postsService: PostsService,
@@ -37,27 +33,11 @@ export class FormularioComponent {
       ])
     })
 
-    this.nuevoPost = {
-      titulo: '',
-      texto: '',
-      autor: '',
-      imagen: '',
-      fecha: '',
-      categoria: ''
-    }
 
   }
 
   onSubmit() {
-    this.postsService.create(this.nuevoPost);
-    this.nuevoPost = {
-      titulo: '',
-      texto: '',
-      autor: '',
-      imagen: '',
-      fecha: '',
-      categoria: ''
-    }
-    this.router.navigate(['/posts'])
+    this.postsService.create(this.formulario.value);
+    this.router.navigate(['blog/posts'])
   }
 }
