@@ -15,7 +15,7 @@ export class PostsService {
         texto: 'Qué pequeña eres brizna de hierba. Sí, pero tengo toda la Tierra a mis pies. ',
         autor: 'Rabindranath Tagore',
         imagen: 'https://viajes.nationalgeographic.com.es/medio/2021/11/11/isla-lewis_c3d8b4b2_1800x1136.jpg',
-        fecha: '10/03/2015',
+        fecha: new Date('10-03-2015'),
         categoria: 'viajes'
       },
       {
@@ -23,7 +23,7 @@ export class PostsService {
         texto: 'El secreto del éxito en la vida es comer lo que te gusta y dejar que la comida combata dentro.',
         autor: 'Marc Twain',
         imagen: 'https://niceexperience.net/wp-content/uploads/blogtailandia/2017/11/plato-nacional-tailandia-pad-thai.jpg',
-        fecha: '25/05/2018',
+        fecha: new Date('25-05-2018'),
         categoria: 'gastronomía'
       },
       {
@@ -31,7 +31,7 @@ export class PostsService {
         texto: 'Eres mi todo, mi más, mi siempre',
         autor: 'Danns Vega',
         imagen: 'https://images.ecestaticos.com/0yp3jbb02Hx-vrgRcqJgcKtVHh8=/240x0:2121x1410/996x747/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F12c%2F7ae%2F61c%2F12c7ae61c0b2e76905bdffa3bf6cbad1.jpg',
-        fecha: '17/06/2020',
+        fecha: new Date('17-06-2020'),
         categoria: 'social'
       }
     ]

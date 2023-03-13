@@ -28,7 +28,7 @@ export class FormularioComponent {
         Validators.required
       ]),
       fecha: new FormControl(),
-      categoria: new FormControl(null, [
+      categoria: new FormControl('', [
         Validators.required
       ])
     })

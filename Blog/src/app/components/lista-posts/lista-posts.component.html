@@ -19,6 +19,6 @@
         <img [src]="post.imagen">
         <p>'{{post.texto}}'</p>
         <p>- {{post.autor}}</p>
-        <p>{{post.fecha}}</p>
+        <p>{{post.fecha | date}}</p>
     </div>
 </div>

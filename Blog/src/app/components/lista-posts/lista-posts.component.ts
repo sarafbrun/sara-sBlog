@@ -20,6 +20,7 @@ export class ListaPostsComponent {
 
   ngOnInit() {
     this.posts = this.postsService.getAll()
+    localStorage.setItem('arrPosts', JSON.stringify(this.posts));
   }
 
   onChange($event: any) {

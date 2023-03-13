@@ -1,5 +1,5 @@
 <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-    <div class="mb-3">
+    <div class="mb-3 mt-5">
         <label class="label-form">Titulo</label>
         <input class="form-control" name="titulo" placeholder="Escribe el título del post" formControlName="titulo">
     </div>
@@ -9,8 +9,8 @@
     </div>
     <div class="mb-3">
         <label class="label-form">Autor</label>
-        <input type="text" name="autor" class="form-control" formControlName="autor"
-            placeholder="Escribe el nombre del autor">
+        <textarea type="text" name="autor" class="form-control" formControlName="autor"
+            placeholder="Escribe el nombre del autor"></textarea>
     </div>
     <div class="mb-3">
         <div>
@@ -21,11 +21,12 @@
     </div>
     <div class="mb-3">
         <label class="label-form">Fecha</label>
-        <input type="text" name="fecha" class="form-control" formControlName="fecha">
+        <input type="date" name="fecha" class="form-control" formControlName="fecha">
     </div>
     <div class="mb-3">
-        <label class="label-form">Selecciona una categoria</label>
+        <label class="label-form">Categoria</label>
         <select class="form-control" name="categoria" formControlName="categoria">
+            <option value="">Selecciona una categoria</option>
             <option value="general">General</option>
             <option value="viajes">Viajes</option>
             <option value="gastronomia">Gastronomía</option>
