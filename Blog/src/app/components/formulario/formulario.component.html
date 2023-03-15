@@ -1,16 +1,21 @@
+<h2>Añade un nuevo post</h2>
+
 <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
     <div class="mb-3 mt-5">
         <label class="label-form">Titulo</label>
         <input class="form-control" name="titulo" placeholder="Escribe el título del post" formControlName="titulo">
+        <p class="error" *ngIf="checkError('titulo', 'required')"> El campo es requerido</p>
     </div>
     <div class="mb-3">
         <label class="label-form">Texto</label>
-        <input type="text" name="texto" class="form-control" placeholder="Escribe el texto" formControlName="texto">
+        <textarea type="text" name="texto" class="form-control" placeholder="Escribe el texto"
+            formControlName="texto"></textarea>
+        <p class="error" *ngIf="checkError('texto', 'maxlength')"> El campo contiene demasiados caracteres</p>
     </div>
     <div class="mb-3">
         <label class="label-form">Autor</label>
-        <textarea type="text" name="autor" class="form-control" formControlName="autor"
-            placeholder="Escribe el nombre del autor"></textarea>
+        <input type="text" name="autor" class="form-control" formControlName="autor"
+            placeholder="Escribe el nombre del autor">
     </div>
     <div class="mb-3">
         <div>
@@ -18,6 +23,7 @@
         </div>
         <input type="text" name="imagen" class="form-control" formControlName="imagen"
             placeholder="Pega la url de la imagen">
+        <p class="error" *ngIf="checkError('imagen', 'required')"> El campo es requerido</p>
     </div>
     <div class="mb-3">
         <label class="label-form">Fecha</label>
@@ -34,6 +40,7 @@
             <option value="actualidad">Actualidad</option>
             <option value="curiosidades">Curiosidades</option>
         </select>
+        <p class="error" *ngIf="checkError('categoria', 'required')"> El campo es requerido</p>
     </div>
     <input type="submit" value="Enviar" class="btn btn-primary" [disabled]="!formulario.valid">
 </form>

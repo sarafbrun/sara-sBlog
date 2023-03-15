@@ -21,7 +21,7 @@ export class FormularioComponent {
         Validators.required
       ]),
       texto: new FormControl(null, [
-        Validators.maxLength(700)
+        Validators.maxLength(50)
       ]),
       autor: new FormControl(),
       imagen: new FormControl(null, [
@@ -39,5 +39,9 @@ export class FormularioComponent {
   onSubmit() {
     this.postsService.create(this.formulario.value);
     this.router.navigate(['blog/posts'])
+  }
+
+  checkError(control: string, validator: string) {
+    return this.formulario.get(control)?.hasError(validator) && this.formulario.get(control)?.touched
   }
 }
